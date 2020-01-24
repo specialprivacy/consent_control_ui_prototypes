@@ -1,0 +1,10 @@
+<div fxLayout="row end" fxLayoutGap="35px" fxLayoutAlign="end">
+    <div fxLayout="row end" fxLayoutGap="5px" fxLayoutAlign="end">
+        <button mat-raised-button color="accent" [disabled]='acceptedState || acceptedState === null' (click)="onAcceptClick()" >Accept</button>
+        <button mat-raised-button color="accent" [disabled]='!acceptedState || acceptedState === null' (click)="onRevokeClick()">Revoke</button>
+    </div>
+    <div fxLayout="row end" fxLayoutGap="5px" fxLayoutAlign="end">
+        <button mat-raised-button color="accent" (click)=onSummaryClick()>Summary</button>
+        <button mat-raised-button color="accent" (click)=onFinish()>Complete My Consent</button>
+    </div>
+</div>

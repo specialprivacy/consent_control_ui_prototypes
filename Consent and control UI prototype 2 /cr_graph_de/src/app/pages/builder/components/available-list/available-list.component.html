@@ -1,0 +1,15 @@
+<div style="background-color: #99999931; border-radius: 40px; border-bottom-right-radius: 22px; border-bottom-left-radius: 22px;">
+    <div class="header">
+        <h5>Verfügbare Funktionen</h5>
+    </div>
+    <div fxLayout="column" fxLayoutGap="5px" style="height: 606px;">
+        <div *ngFor="let item of items"
+            class="border"
+            [class.small]="item.id === 'purpose_9'"
+            [class.item]="item.id !== selectedRowId"
+            [class.item-selected]="item.id === selectedRowId"
+            (click)="onItemClick(item)">
+            <div class="item-text">{{item.name}}</div>
+        </div>
+    </div>
+</div>

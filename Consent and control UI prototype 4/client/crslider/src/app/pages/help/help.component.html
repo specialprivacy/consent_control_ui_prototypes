@@ -1,0 +1,28 @@
+<div style="background: #fff; padding: 20px; height: calc(100% - 20px);">
+<h2 i18n="@@help_user_guide">User Guide</h2>
+
+  <div>
+      <mat-tab-group [(selectedIndex)]="selectedIndex">
+          <mat-tab>
+              <ng-template mat-tab-label i18n="@@help_func_selection">Functionality selection</ng-template>
+              <div style="text-align: center; padding: 10px;">
+                  <img src="assets/{{locale}}/img/help1.png" width="1000">
+              </div>
+              <div style="padding: 5px; text-align: right;">
+                  <button mat-raised-button color="accent" (click)="onIntro()" style="right: 5px;" i18n="@@help_use_case">Use Case</button>
+                  <button mat-raised-button color="primary" (click)="onGoToTab(1)" i18n="@@help_next_button">Next</button>
+              </div>
+          </mat-tab>
+          <mat-tab>
+              <ng-template mat-tab-label i18n="@@help_overview">Overview</ng-template>
+              <div style="text-align: center; padding: 10px;">
+                  <img src="assets/{{locale}}/img/help2.png" width="1000">
+              </div>
+              <div style="padding: 5px; text-align: right;">
+                  <button mat-raised-button color="primary" (click)="onGoToTab(0)" i18n="@@help_back_button" style="right: 5px;">Back</button>
+                  <button mat-raised-button color="accent" (click)="onStart()" i18n="@@help_done_button">Done</button>
+              </div>
+          </mat-tab>
+      </mat-tab-group>
+  </div>
+</div>

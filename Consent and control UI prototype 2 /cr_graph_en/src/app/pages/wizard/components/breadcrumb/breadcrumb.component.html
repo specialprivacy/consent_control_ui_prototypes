@@ -1,0 +1,19 @@
+<nav aria-label="breadcrumb" role="navigation">
+    <ol class="breadcrumb" style="height: 48px;">
+        <li *ngFor="let pathItem of pathItems; last as isLast" class="breadcrumb-item" style="padding-left: 3px;">
+            <div *ngIf="isLast; then lastBlock; else block"></div>
+            <ng-template #block>
+                <a (click)="onBreadCrumbItemClick(pathItem)" style="cursor: pointer;">
+                    {{pathItem.name}}
+                    <i class="tab-icon {{pathItem.icon}}" style="cursor: pointer;"></i>
+                </a>
+            </ng-template>
+            <ng-template #lastBlock>
+                <span *ngIf="isLast" class="breadcrumb-item active">
+                    {{pathItem.name}}
+                    <i class="tab-icon {{pathItem.icon}}"></i>
+                </span>
+            </ng-template>
+        </li>
+    </ol>
+</nav>

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "cr-wizard-en",
+    "wizard-en": "cr-wizard-en"
+  }
+}

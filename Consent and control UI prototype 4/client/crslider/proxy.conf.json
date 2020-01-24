@@ -1,0 +1,22 @@
+{
+  "/de/api/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "logLevel": "debug",
+    "headers": {"Locale":"de"},
+    "changeOrigin": false,
+    "pathRewrite": {
+      "^/de/api": ""
+    }
+  },
+  "/api/*": {
+    "target": "http://localhost:8080",
+    "secure": false,
+    "logLevel": "debug",
+    "headers": {"Locale":"en"},
+    "changeOrigin": false,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

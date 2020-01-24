@@ -1,0 +1,42 @@
+<div style="background: #fff; padding: 20px; height: calc(100% - 20px);">
+  <h2 i18n="@@intro_use_case">Use Case</h2>
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab  i18n-label="@@intro_introduction" label="Introduction">
+            <div style="text-align: center; padding: 10px;">
+                <img src="assets/{{locale}}/img/tracker.jpg" style="width: 250px">
+                <p i18n="@@intro_introduction_text" align="justify">Imagine you have bought a <b>wearable appliance</b> for <b>fitness tracking</b> from BeFit, Inc. Before starting using the BeFit device you are reading BeFit’s instructions on how to <b>activate</b> the device.</p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button i18n="@@intro_introduction_instructions_button" mat-raised-button color="primary" (click)="onGoToTab(1)">Instructions</button>
+            </div>
+        </mat-tab>
+        <mat-tab i18n-label="@@intro_instructions" label="Instructions">
+            <div i18n="@@intro_instructions_text" style="padding: 10px;">
+              <p align="justify">Thank You for choosing our device! BeFit Inc. (<b>"BeFit"</b>, <b>"we"</b>, <b>"us"</b>, <b>"our"</b>) designs products and tools that track everyday health and fitness to empower and inspire users to lead healthier, more active lives.</p>
+              <p align="justify">To use BeFit device (<b>"Device"</b>) you have to activate it by visiting our website https://befit.com/activate and giving your consent for the processing of your data by BeFit.<br/>
+                  When activating your Device, you will be presented with a <b>consent request</b> for data processing. This consent request provides you with the following information:</p>
+                  <ul>
+                      <li>what is the <b>purpose</b> for the data processing (e.i.: functionality that is offered by our Device);</li>
+                      <li>what <b>data</b> about you should be processed by BeFit to offer you the corresponding functionality;</li>
+                      <li><b>where</b> your data are <b>stored</b>;</li>
+                      <li><b>how</b> your data are <b>processed</b>;</li>
+                      <li><b>with whom</b> your data could be <b>shared</b>.</li>
+                  </ul>
+              <p align="justify">You can choose the functionality you would like to have on the Device, review what information has to be processed to provide this functionality and decide if you want to consent to the information processing to be able to use this functionality.</p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(0)" style="right: 5px;" i18n="@@intro_back_button">Back</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)"i18n="@@intro_next_button">Next</button>
+            </div>
+        </mat-tab>
+        <mat-tab i18n-label="@@intro_activate" label="Activate">
+            <div style="text-align: center; padding: 10px;">
+                <p i18n="@@intro_activate_text">Click "Activate" button to see how activation would work. You will be presented with a short user guide first and then with the consent request.</p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)" style="right: 5px;" i18n="@@intro_back_button">Back</button>
+                <button mat-raised-button color="accent" (click)="onStart()" i18n="@@intro_activate_button">Activate</button>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

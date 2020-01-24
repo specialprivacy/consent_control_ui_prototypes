@@ -1,0 +1,10 @@
+<div class="border" style="padding: 5px; margin: 5px; width: 1430px; border-color: #ced2d6!important;">
+    <div [class.loader-hidden]="!show">
+        <div class="loader-overlay">
+            <div>
+                <mat-progress-bar *ngIf="show" mode="indeterminate"></mat-progress-bar>
+            </div>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,42 @@
+<h2>Benuzteranleitung</h2>
+
+<div>
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab label="Funktionsauswahl">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help1.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <!-- <button mat-raised-button color="accent" (click)="onIntro()">Anwendungsfall</button> -->
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Weiter</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Zustimmung">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help2.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(0)">Zurueck</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)">Weiter</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Optionale Elemente & Widerruf der Zustimmung">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help3.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Zurueck</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(3)">Weiter</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Zusammenfassung & Abschliessen der Zustimmung">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help4.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)">Zurueck</button>
+                <!-- <button mat-raised-button color="accent" (click)="onStart()">Fertig</button> -->
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

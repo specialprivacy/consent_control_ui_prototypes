@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+   <file source-language="en" datatype="plaintext" original="ng2.template">
+      <body>
+         <trans-unit id="no_functionality1" datatype="html"><target>GERÄTEFUNKTIONEN SIND OHNE DATENVERARBEITUNG NICHT VERFÜGBAR.</target></trans-unit>
+         <trans-unit id="no_functionality2" datatype="html"><target>Bitte bewegen Sie den roten Zeiger, um Ihre Einstellungen für die Datenverarbeitung anzugeben und die Gerätefunktionen zu aktivieren.</target></trans-unit>
+         <trans-unit id="no_functionality_message1" datatype="html"><target>Bewegen Sie den roten Zeiger, um Ihre Einstellungen für die Datenverarbeitung anzugeben.</target></trans-unit>
+         <trans-unit id="wrong_address" datatype="html"><target>Falsche Webadresse!</target></trans-unit>
+
+         <trans-unit id="question_slider_think" datatype="html"><target>Lesen Sie den obigen Satz über die Einverständniserklärung und markieren Sie Ihre Antwort. Wenn Sie nicht antworten können, markieren Sie den Mittelpunkt der Skala.</target></trans-unit>
+
+         <trans-unit id="question_sliderQuestion1" datatype="html"><target>Ich denke, dass ich die Einverständniserklärung gerne häufig benutzen würde.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion2" datatype="html"><target>Ich fand die Einverständniserklärung unnötig komplex.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion3" datatype="html"><target>Ich fand die Einverständniserklärung einfach zu benutzen.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion4" datatype="html"><target>Ich glaube, ich würde die Hilfe einer technisch versierten Person benötigen, um die Einverständniserklärung benutzen zu können.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion5" datatype="html"><target>Ich fand, die verschiedenen Funktionen in dieser Einverständniserklärung waren gut integriert.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion6" datatype="html"><target>Ich denke, die Einverständniserklärung enthielt zu viele Inkonsistenzen.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion7" datatype="html"><target>Ich kann mir vorstellen, dass die meisten Menschen den Umgang mit dieser Einverständniserklärung sehr schnell lernen.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion8" datatype="html"><target>Ich fand die Einverständniserklärung sehr umständlich zu nutzen.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion9" datatype="html"><target>Ich fühlte mich bei der Benutzung der Einverständniserklärung sehr sicher.</target></trans-unit>
+         <trans-unit id="question_sliderQuestion10" datatype="html"><target>Ich musste eine Menge lernen, bevor ich anfangen konnte die Einverständniserklärung zu verwenden.</target></trans-unit>
+
+         <trans-unit id="question_strongly" datatype="html"><target>Stimme</target></trans-unit>
+         <trans-unit id="question_agree" datatype="html"><target>voll zu</target></trans-unit>
+         <trans-unit id="question_disagree" datatype="html"><target>überhaupt nicht zu</target></trans-unit>
+
+         <trans-unit id="app_title" datatype="html"><target>Datenschutzerklaerung - BeFit</target></trans-unit>
+         <trans-unit id="app_subtitle" datatype="html"><target>Bitte geben Sie Ihre Datenverarbeitungpräferenzen ein.</target></trans-unit>
+         <trans-unit id="app_submit_button" datatype="html"><target>Zustimmung abschliessen</target></trans-unit>
+         <trans-unit id="demdata_complete" datatype="html"><target>Fertig</target></trans-unit>
+         <trans-unit id="demdata_stop_video" datatype="html"><target>STOPPEN SIE DIE VIDEOAUFZEICHNUNG!</target></trans-unit>
+         <trans-unit id="demdata_title" datatype="html"><target>Demografische Daten</target></trans-unit>
+         <trans-unit id="demdata_message" datatype="html"><target>Diese Daten werden komplett anonym gespeichert und nur zu Forschungszwecken verwendet. Die Daten werden gelöscht, wenn das Projekt (https://www.specialprivacy.eu/) endet.</target></trans-unit>
+         <trans-unit id="demdata_genderFormGroup" datatype="html"><target>Geschlecht:</target></trans-unit>
+         <trans-unit id="demdata_genderFormGroup_1" datatype="html"><target>maennlich</target></trans-unit>
+         <trans-unit id="demdata_genderFormGroup_2" datatype="html"><target>weiblich</target></trans-unit>
+         <trans-unit id="demdata_required" datatype="html"><target>Pflichtfeld.</target></trans-unit>
+         <trans-unit id="demdata_next" datatype="html"><target>Weiter</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup" datatype="html"><target>Alter:</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_1" datatype="html"><target>weniger als 16 Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_2" datatype="html"><target>16-25 Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_3" datatype="html"><target>26-35 Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_4" datatype="html"><target>36-45 Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_5" datatype="html"><target>46-55 Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_ageFormGroup_6" datatype="html"><target>55+ Jahre alt</target></trans-unit>
+         <trans-unit id="demdata_countryFromFormGroup" datatype="html"><target>Was ist Ihre Nationalität?</target></trans-unit>
+
+         <trans-unit id="question_howRememberGraph" datatype="html"><target>Wie gut erinnern Sie sich an das Übersichtsdiagramm?</target></trans-unit>
+         <trans-unit id="question_howRememberGraph_1" datatype="html"><target>Überhaupt nicht</target></trans-unit>
+         <trans-unit id="question_howRememberGraph_2" datatype="html"><target>Eher schlecht</target></trans-unit>
+         <trans-unit id="question_howRememberGraph_3" datatype="html"><target>Maessig</target></trans-unit>
+         <trans-unit id="question_howRememberGraph_4" datatype="html"><target>Eher gut</target></trans-unit>
+         <trans-unit id="question_howRememberGraph_5" datatype="html"><target>Sehr gut</target></trans-unit>
+         <trans-unit id="question_usefull_6" datatype="html"><target>Unzutreffend</target></trans-unit>
+
+         <trans-unit id="demdata_educationFormGroup" datatype="html"><target>Hoechste abgeschlossene Schulausbildung:</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_1" datatype="html"><target>Keine</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_2" datatype="html"><target>Grundschule</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_3" datatype="html"><target>Sekundarschule (Allgemeinbildend)</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_4" datatype="html"><target>Sekundarschule (Berufsbildend)</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_5" datatype="html"><target>Bachelor</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_6" datatype="html"><target>Master</target></trans-unit>
+         <trans-unit id="demdata_educationFormGroup_7" datatype="html"><target>Doktorat</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground" datatype="html"><target>Bildungsfeld:</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_1" datatype="html"><target>Naturwissenschaften</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_2" datatype="html"><target>Informationstechnologie</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_3" datatype="html"><target>Ingenieurwesen und verwandte Technologien</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_4" datatype="html"><target>Architektur und Baugewerbe</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_5" datatype="html"><target>Landwirtschaft</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_6" datatype="html"><target>Medizin</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_7" datatype="html"><target>Lehre</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_8" datatype="html"><target>Wirtschaft und Verwaltung</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_9" datatype="html"><target>Sozialwissenschaften</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_10" datatype="html"><target>Geisteswissenschaften und Kuenste</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_11" datatype="html"><target>Persoenliche Dienstleistungen</target></trans-unit>
+         <trans-unit id="demdata_professionalBackground_12" datatype="html"><target>Sonstige Berufe</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg" datatype="html"><target>Wie viele Stunden pro Tag (durchschnittlich) surfen Sie im Internet?</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg_1" datatype="html"><target>weniger als 1 Stunde pro Tag</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg_2" datatype="html"><target>1-3 Stunden</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg_3" datatype="html"><target>3-6 Stunden</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg_4" datatype="html"><target>6-8 Stunden</target></trans-unit>
+         <trans-unit id="demdata_internetUsageAvg_5" datatype="html"><target>mehr als 8 Stunden pro Tag</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio" datatype="html"><target>Wie wuerden Sie Ihre derzeitige Internetkompetenz einschaetzen?</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_1" datatype="html"><target>Anfaenger</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_1_tooltip" datatype="html"><target>Keine Ahnung was ich mache, wenn ich im Internet surfe.</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_2" datatype="html"><target>Fortgeschrittener Anfaenger</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_3" datatype="html"><target>Kompetent</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_4" datatype="html"><target>Sachkundige</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_5" datatype="html"><target>Experte</target></trans-unit>
+         <trans-unit id="demdata_internetSatisfactio_5_tooltip" datatype="html"><target>Ich halte mich für einen Experten in allen Bereichen der Internetnutzung (z.B.: Surfen, Registrieren auf einer Website, Einkaufen, Anmelden bei meiner E-Mail usw.). Andere Benutzer bitten mich um Hilfe.</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer" datatype="html"><target>Wie einfach ist es fuer Sie Computer zu benutzen?</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer_1" datatype="html"><target>Sehr schwer</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer_2" datatype="html"><target>Eher schwer</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer_3" datatype="html"><target>Weder schwer noch einfach</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer_4" datatype="html"><target>Eher einfach</target></trans-unit>
+         <trans-unit id="demdata_comfortableComputer_5" datatype="html"><target>Sehr einfach</target></trans-unit>
+         <trans-unit id="demdata_device" datatype="html"><target>Welches Geraet bevorzugen Sie, um im Internet zu surfen?</target></trans-unit>
+         <trans-unit id="demdata_device_1" datatype="html"><target>Desktop computer</target></trans-unit>
+         <trans-unit id="demdata_device_2" datatype="html"><target>Laptop</target></trans-unit>
+         <trans-unit id="demdata_device_3" datatype="html"><target>Tablet</target></trans-unit>
+         <trans-unit id="demdata_device_4" datatype="html"><target>Smartphone</target></trans-unit>
+         <trans-unit id="demdata_go_to_question" datatype="html"><target>Zum Fragebogen</target></trans-unit>
+         <trans-unit id="question_stop_video" datatype="html"><target>STOPPEN SIE DIE VIDEOAUFZEICHNUNG!</target></trans-unit>
+         <trans-unit id="question_title" datatype="html"><target>Umfrage</target></trans-unit>
+         <trans-unit id="question_studentIdFormGroup" datatype="html"><target>Bitte geben Sie die Nummer Ihres Studentenausweises</target></trans-unit>
+         <trans-unit id="question_student_id" datatype="html"><target>Studentenausweises</target></trans-unit>
+         <trans-unit id="question_required" datatype="html"><target>Pflichtfeld.</target></trans-unit>
+         <trans-unit id="question_next" datatype="html"><target>Weiter</target></trans-unit>
+         <trans-unit id="question_yesno_think" datatype="html"><target>Denken Sie an die gerade gegebene Zustimmung.</target></trans-unit>
+         <trans-unit id="question_yes" datatype="html"><target>Ja</target></trans-unit>
+         <trans-unit id="question_no" datatype="html"><target>Nein</target></trans-unit>
+         <trans-unit id="question_yesno_1" datatype="html"><target>Haben Sie der Verarbeitung Ihrer „Ruheherzfrequenz“ zugestimmt, um die Funktion „Die Ruheherzfrequenz anzeigen“ verwenden zu koennen?</target></trans-unit>
+         <trans-unit id="question_yesno2" datatype="html"><target>Haben Sie der Verarbeitung Ihrer "Ruheherzfrequenz" und "Aktivitaetsherzfrequenz" zugestimmt, um die Funktion "Gesamte Tagesherzfrequenz anzeigen" zu verwenden?</target></trans-unit>
+         <trans-unit id="question_yesno3" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um die Ableitung von verbrannten Kalorien zu ermoeglichen?</target></trans-unit>
+         <trans-unit id="question_yesno4" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um Ihre Cardio-Fitness Punkte zu erhalten?</target></trans-unit>
+         <trans-unit id="question_yesno5" datatype="html"><target>Haben Sie der Verarbeitung Ihrer "GPS-Koordinaten" zugestimmt, um Ihre Route auf einer Karte sehen zu können?</target></trans-unit>
+         <trans-unit id="question_yesno6" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um Ihre punktweise Geschwindigkeit auf einer Karte zu sehen?</target></trans-unit>
+         <trans-unit id="question_yesno7" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um die Rennzeitvorhersagen abzuleiten?</target></trans-unit>
+         <trans-unit id="question_yesno8" datatype="html"><target>Haben Sie den Recovery-Berater aktiviert?</target></trans-unit>
+         <trans-unit id="question_yesno9" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um sie zu sichern?</target></trans-unit>
+         <trans-unit id="question_yesno10" datatype="html"><target>Haben Sie der Verarbeitung Ihrer Daten zugestimmt, um die Produkte und Dienstleistungen des Dienstanbieters zu verbessern?</target></trans-unit>
+         <trans-unit id="question_yesno11" datatype="html"><target>Haben Sie zugestimmt, die gezielte Fitnesswerbung zu erhalten?</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest" datatype="html"><target>Wie zufrieden oder unzufrieden sind Sie, insgesamt, mit der Einverstaendniserklaerung?</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest_1" datatype="html"><target>Sehr zufrieden</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest_2" datatype="html"><target>Eher zufrieden</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest_3" datatype="html"><target>Weder zufrieden noch unzufrieden</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest_4" datatype="html"><target>Eher unzufrieden</target></trans-unit>
+         <trans-unit id="question_satisfiedConsentRequest_5" datatype="html"><target>Sehr unzufrieden</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest" datatype="html"><target>Wie wahrscheinlich ist es, dass Sie diese Einverstaendniserklaerung einem Freund/einer Freundin empfehlen wuerden?</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest_1" datatype="html"><target>Sehr unwahrscheinlich</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest_2" datatype="html"><target>Eher unwarscheinlich</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest_3" datatype="html"><target>Unentschieden</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest_4" datatype="html"><target>Eher wahrscheinlich</target></trans-unit>
+         <trans-unit id="question_recommendConsentRequest_5" datatype="html"><target>Sehr wahrscheinlich</target></trans-unit>
+         <trans-unit id="question_impressionTimeToComplete" datatype="html"><target>Welchen Eindruck hatten Sie von der Zeit, die Sie benoetigten, um die Aufgaben zu erfuellen?</target></trans-unit>
+         <trans-unit id="question_impressionTimeToComplete_1" datatype="html"><target>Zu lange</target></trans-unit>
+         <trans-unit id="question_impressionTimeToComplete_2" datatype="html"><target>Zu lange, aber es hat sich gelohnt</target></trans-unit>
+         <trans-unit id="question_impressionTimeToComplete_3" datatype="html"><target>Eine richtige Menge an Zeit</target></trans-unit>
+         <trans-unit id="question_impressionTimeToComplete_4" datatype="html"><target>Es dauerte weniger Zeit als ich dachte</target></trans-unit>
+         <trans-unit id="question_wordsDescribe" datatype="html"><target>Welche Woerter würden Sie verwenden, um diese Einverstaendniserklaerung zu beschreiben?</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_1" datatype="html"><target>Nervig</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_2" datatype="html"><target>Ansprechend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_3" datatype="html"><target>Langweilig</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_4" datatype="html"><target>Klar</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_5" datatype="html"><target>Fesselnd</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_6" datatype="html"><target>Komplex</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_7" datatype="html"><target>Verwirrend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_8" datatype="html"><target>Auf dem neusten Stand</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_9" datatype="html"><target>Altmodisch</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_10" datatype="html"><target>Schwer</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_11" datatype="html"><target>Stoerend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_12" datatype="html"><target>Ablenkend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_13" datatype="html"><target>Langweilig</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_132" datatype="html"><target>Einfach zu verwenden</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_14" datatype="html"><target>Effektiv</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_15" datatype="html"><target>Effizient</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_16" datatype="html"><target>Muehlos</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_17" datatype="html"><target>Empowering</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_18" datatype="html"><target>Engagierend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_19" datatype="html"><target>Aussergewoehnlich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_20" datatype="html"><target>Bekannt</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_21" datatype="html"><target>Schnell</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_22" datatype="html"><target>Flexibel</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_23" datatype="html"><target>Frisch</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_24" datatype="html"><target>Freundlich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_25" datatype="html"><target>Frustrierend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_26" datatype="html"><target>Kommt in die Quere</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_27" datatype="html"><target>Schwer zu verwenden</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_28" datatype="html"><target>Hilfreich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_29" datatype="html"><target>Gute Qualitaet</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_30" datatype="html"><target>Beeindruckend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_31" datatype="html"><target>Uneffektiv</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_32" datatype="html"><target>Innovativ</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_33" datatype="html"><target>Inspirierend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_34" datatype="html"><target>Einschuechternd</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_35" datatype="html"><target>Intuitiv</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_36" datatype="html"><target>Einladend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_37" datatype="html"><target>Irrelevant</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_38" datatype="html"><target>Alt</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_39" datatype="html"><target>Gewoehnlich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_40" datatype="html"><target>Strukturiert</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_41" datatype="html"><target>Ueberwaeltigend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_42" datatype="html"><target>Goennerhaft</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_43" datatype="html"><target>Schlechte Qualitaet</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_44" datatype="html"><target>Maechtig</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_45" datatype="html"><target>Reagierend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_46" datatype="html"><target>Starr</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_47" datatype="html"><target>Befriedigend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_48" datatype="html"><target>Langsam</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_49" datatype="html"><target>Zeitaufwendig</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_50" datatype="html"><target>Zeitsparrend</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_51" datatype="html"><target>Zu technisch</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_52" datatype="html"><target>Unnahbar</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_53" datatype="html"><target>Unattraktiv</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_54" datatype="html"><target>Unkontrollierbar</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_55" datatype="html"><target>Verstaendlich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_56" datatype="html"><target>Unerwuenscht</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_57" datatype="html"><target>Unberechenbar</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_58" datatype="html"><target>Verwendbar</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_59" datatype="html"><target>Nuetzlich</target></trans-unit>
+         <trans-unit id="question_wordsDescribe_60" datatype="html"><target>Wertvoll</target></trans-unit>
+
+         <trans-unit id="question_doyoFeelProc" datatype="html"><target>Haben Sie das Gefeuhl, dass Sie mit solcher Zustimmung die Verarbeitung Ihrer Daten kontrollieren?</target></trans-unit>
+         <trans-unit id="question_doyoFeelProc_1" datatype="html"><target>Stimme voll zu</target></trans-unit>
+         <trans-unit id="question_doyoFeelProc_2" datatype="html"><target>Stimme groesstenteils zu</target></trans-unit>
+         <trans-unit id="question_doyoFeelProc_3" datatype="html"><target>Stimme teilweise zu</target></trans-unit>
+         <trans-unit id="question_doyoFeelProc_4" datatype="html"><target>Stimme weniger zu</target></trans-unit>
+         <trans-unit id="question_doyoFeelProc_5" datatype="html"><target>Stimme überhaupt nicht zu</target></trans-unit>
+
+         <trans-unit id="graph_title" datatype="html"><target>Übersicht</target></trans-unit>
+         <trans-unit id="graph_close" datatype="html"><target>Schliessen</target></trans-unit>
+
+         <trans-unit id="question_howUsefullGraph" datatype="html"><target>Wie nuetzlich fanden Sie das Übersichtsdiagramm?</target></trans-unit>
+         <trans-unit id="question_howUsefullGraphIcon" datatype="html"><target>Wie nuetzlich fanden Sie die Piktogramme im Übersichtsdiagramm?</target></trans-unit>
+         <trans-unit id="question_howUsefullColorcoding" datatype="html"><target>Wie nuetzlich fanden Sie die Farbkodierung der Datentypen im Übersichtsdiagramm?</target></trans-unit>
+         <trans-unit id="question_usefull_1" datatype="html"><target>Gar nicht nuetzlich</target></trans-unit>
+         <trans-unit id="question_usefull_2" datatype="html"><target>Etwas nuetzlich</target></trans-unit>
+         <trans-unit id="question_usefull_3" datatype="html"><target>Nuetzlich</target></trans-unit>
+         <trans-unit id="question_usefull_4" datatype="html"><target>Sehr nuetzlich</target></trans-unit>
+         <trans-unit id="question_usefull_5" datatype="html"><target>Aeusserst nuetzlich</target></trans-unit>
+
+         <trans-unit id="help_user_guide" datatype="html"><target>Benuzteranleitung</target></trans-unit>
+         <trans-unit id="help_func_selection" datatype="html"><target>Functionality selection</target></trans-unit>
+         <trans-unit id="help_overview" datatype="html"><target>Übersicht</target></trans-unit>
+         <trans-unit id="help_back_button" datatype="html"><target>Zurueck</target></trans-unit>
+         <trans-unit id="help_next_button" datatype="html"><target>Weiter</target></trans-unit>
+         <trans-unit id="help_done_button" datatype="html"><target>Fertig</target></trans-unit>
+         <trans-unit id="help_use_case" datatype="html"><target>Anwendugsfall</target></trans-unit>
+         <trans-unit id="intro_use_case" datatype="html"><target>Anwendugsfall</target></trans-unit>
+         <trans-unit id="intro_introduction_text" datatype="html"><target>Stellen Sie sich vor, Sie haben ein <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>tragbares Geraet<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> von BeFit, Inc. fuer das <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Fitness-Tracking<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> gekauft. Bevor Sie das BeFit-Geraet verwenden, lesen Sie die BeFit-Anleitungen zur Aktivierung des Geraets.</target></trans-unit>
+         <trans-unit id="intro_introduction_instructions_button" datatype="html"><target>Anleitung</target></trans-unit>
+         <trans-unit id="intro_introduction" datatype="html"><target>Einfuehrung</target></trans-unit>
+         <trans-unit id="intro_instructions_text" datatype="html">
+            <target>
+              <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Danke, dass Sie unser Geraet gewaehlt haben! BeFit Inc. (<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>&quot;BeFit&quot;<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>&quot;we&quot;<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>&quot;us&quot;<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>, <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>&quot;our&quot;<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>) entwickelt Produkte und Geraete fuer taegliche Gesundheits- und Fitness-Tracking, um die Benutzer zu unterstuetzen und zu inspirieren, ein gesünderes und aktiveres Leben zu fuehren.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+              <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Um das BeFit-Geraet (<x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>&quot;Geraet&quot;<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>) zu nutzen, muessen Sie es aktivieren, indem Sie unsere Website https://best.com/de/activate besuchen und die Verarbeitung Ihrer Daten durch BeFit zustimmen.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+                  Wenn Sie Ihr Geraut aktivieren, wird Ihnen eine <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Einverstaendniserklaerung<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> zur Datenverarbeitung gezeigt. Diese Einverstaendniserklaerung stellt Ihnen folgende Informationen zur Verfügung:<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+                  <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/>
+                      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>was ist der <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Zweck<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> der Datenverarbeitung (z.B.: die Funktionen unseres Geraets);<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+                      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>welche <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Daten<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> über Sie verarbeitet BeFit, um Ihnen die entsprechenden Funktionen anzubieten;<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+                      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>wo<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> werden Ihre Daten <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>gespeichert<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>;<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+                      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>wie<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> werden Ihre Daten <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>verarbeitet<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>;<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+                      <x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>an wem<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> werden Ihre Daten <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>weitergegeben<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/>
+                  <x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/>
+              <x id="START_PARAGRAPH" ctype="x-p" equiv-text="&lt;p&gt;"/>Sie koennen die Funktionen, die Sie auf dem Geraet haben moechten, auswaehlen. Sie koennen auch anschauen, welche Informationen verarbeitet werden muessen, um Ihnen diese Funktionen bereitzustellen; und entscheiden, ob Sie der Informationsverarbeitung zustimmen möchten, um diese Funktionen verwenden zu können.<x id="CLOSE_PARAGRAPH" ctype="x-p" equiv-text="&lt;/p&gt;"/>
+            </target>
+         </trans-unit>
+         <trans-unit id="intro_back_button" datatype="html"><target>Zurueck</target></trans-unit>
+         <trans-unit id="intro_next_button" datatype="html"><target>Weiter</target></trans-unit>
+         <trans-unit id="intro_instructions" datatype="html"><target>Anleitung</target></trans-unit>
+         <trans-unit id="intro_activate_text" datatype="html"><target>Klicken Sie auf "Aktivieren", um zu sehen, wie die Aktivierung funktioniert. Ihnen wird zuerst eine kurze Bedienungsanleitung und dann die Einverstaendniserklaerung gezeigt.</target></trans-unit>
+         <trans-unit id="intro_activate_button" datatype="html"><target>Aktivieren</target></trans-unit>
+         <trans-unit id="intro_activate" datatype="html"><target>Aktivieren</target></trans-unit>
+         <trans-unit id="thankyou" datatype="html"><target>Vielen Dank fuer Ihre Arbeit :)</target></trans-unit>
+      </body>
+   </file>
+</xliff>

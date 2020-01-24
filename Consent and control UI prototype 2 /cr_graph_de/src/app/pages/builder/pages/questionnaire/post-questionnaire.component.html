@@ -1,0 +1,547 @@
+<h2 style="color: red;">STOPPEN SIE DIE VIDEOAUFZEICHNUNG!</h2>
+<h2>Umfrage</h2>
+
+<mat-vertical-stepper linear="true">
+
+    <!-- Please name what do you remember agreeing to be processed.  -->
+    <mat-step [stepControl]="agreeingToProcessed">
+        <form [formGroup]="agreeingToProcessed">
+            <ng-template matStepLabel>Nennen Sie eine der Funktionen, die Sie akzeptiert haben (in der Aufgabe, wo Sie Ihre Zustimmung entsprechend Ihren eigenen Praeferenzen gegeben haben), und
+                <br/>listen Sie andere Daten auf, die Verarbeitung von denen Sie zugestimmt haben, um diese Funktion zu nutzen zu koennen.</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Zweck/Fuktion" formControlName="purpose" required></textarea>
+                </mat-form-field>
+                 <mat-form-field>
+                    <textarea matInput placeholder="Daten" formControlName="data" required></textarea>
+                </mat-form-field>
+                 <mat-form-field>
+                    <textarea matInput placeholder="Datenweitergabe" formControlName="sharing" required></textarea>
+                </mat-form-field>
+                 <mat-form-field>
+                    <textarea matInput placeholder="Speichern" formControlName="storage" required></textarea>
+                </mat-form-field>
+                 <mat-form-field>
+                    <textarea matInput placeholder="Datenverarbeitung" formControlName="processing" required></textarea>
+                </mat-form-field>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- Overall, how satisfied or dissatisfied are you with the consent request? -->
+    <mat-step [stepControl]="satisfiedConsentRequest">
+        <form [formGroup]="satisfiedConsentRequest">
+            <ng-template matStepLabel>Wie zufrieden oder unzufrieden sind Sie, insgesamt, mit der Einverstaendniserklaerung?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Sehr zufrieden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Eher zufrieden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Weder zufrieden noch unzufrieden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Eher unzufrieden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Sehr unzufrieden</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="satisfiedConsentRequest.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+
+    <!-- How likely is it that you would recommend the consent request to a friend? -->
+    <mat-step [stepControl]="recommendConsentRequest">
+        <form [formGroup]="recommendConsentRequest">
+            <ng-template matStepLabel> Wie wahrscheinlich ist es, dass Sie diese Einverstaendniserklaerung einem Freund/einer Freundin empfehlen wuerden?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Sehr unwahrscheinlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Eher unwarscheinlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Unentschieden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Eher wahrscheinlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Sehr wahrscheinlich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="recommendConsentRequest.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- What was you impression of the time it took you to complete the tasks?  -->
+    <mat-step [stepControl]="impressionTimeToComplete">
+        <form [formGroup]="impressionTimeToComplete">
+            <ng-template matStepLabel>Welchen Eindruck hatten Sie von der Zeit, die Sie benoetigten, um die Aufgaben zu erfuellen?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Zu lange</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Zu lange, aber es hat sich gelohnt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Eine richtige Menge an Zeit</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Es dauerte weniger Zeit als ich dachte</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="impressionTimeToComplete.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- Which of the following words would you use to describe the consent request?  -->
+    <mat-step [stepControl]="wordsDescribe">
+        <form [formGroup]="wordsDescribe">
+            <ng-template matStepLabel>Welche Woerter würden Sie verwenden, um diese Einverstaendniserklaerung zu beschreiben?</ng-template>
+            <div>
+                <mat-grid-list cols="6" rowHeight="400px" class="grid-test-1">
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="annoying">Nervig</mat-checkbox>
+                            <mat-checkbox formControlName="appealing">Ansprechend</mat-checkbox>
+                            <mat-checkbox formControlName="boring">Lngweilig</mat-checkbox>
+                            <mat-checkbox formControlName="clear">Klar</mat-checkbox>
+                            <mat-checkbox formControlName="compelling">Compelling</mat-checkbox>
+                            <mat-checkbox formControlName="complex">Komplex</mat-checkbox>
+                            <mat-checkbox formControlName="confusing">Verwirrend</mat-checkbox>
+                            <mat-checkbox formControlName="cuttingEdge">Auf dem neusten Stand</mat-checkbox>
+                            <mat-checkbox formControlName="dated">Altmodisch</mat-checkbox>
+                            <mat-checkbox formControlName="difficult">Schwer</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="disruptive">Stoerend</mat-checkbox>
+                            <mat-checkbox formControlName="distracting">Ablenkend</mat-checkbox>
+                            <mat-checkbox formControlName="dull">Langweilig</mat-checkbox>
+                            <mat-checkbox formControlName="easyToUse">Einfach zu verwenden</mat-checkbox>
+                            <mat-checkbox formControlName="effective">Effektiv</mat-checkbox>
+                            <mat-checkbox formControlName="efficient">Effizient</mat-checkbox>
+                            <mat-checkbox formControlName="effortless">Muehelos</mat-checkbox>
+                            <mat-checkbox formControlName="empowering">Empowering</mat-checkbox>
+                            <mat-checkbox formControlName="engaging">Engagierend</mat-checkbox>
+                            <mat-checkbox formControlName="exceptional">Aussergewoehnlich</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="familiar">Bekannt</mat-checkbox>
+                            <mat-checkbox formControlName="fast">Schnell</mat-checkbox>
+                            <mat-checkbox formControlName="flexible">Flexibel</mat-checkbox>
+                            <mat-checkbox formControlName="fresh">Frisch</mat-checkbox>
+                            <mat-checkbox formControlName="friendly">Freundlich</mat-checkbox>
+                            <mat-checkbox formControlName="frustrating">Frustrierend</mat-checkbox>
+                            <mat-checkbox formControlName="getsInTheWay">Kommt in die Quere</mat-checkbox>
+                            <mat-checkbox formControlName="hardToUse">Schwer zu verwenden</mat-checkbox>
+                            <mat-checkbox formControlName="Helpful">Hilfreich</mat-checkbox>
+                            <mat-checkbox formControlName="highQuality">Gute Qualitaet</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="impressive">Beeindruckend</mat-checkbox>
+                            <mat-checkbox formControlName="ineffective">Uneffektiv</mat-checkbox>
+                            <mat-checkbox formControlName="innovative">Innovativ</mat-checkbox>
+                            <mat-checkbox formControlName="inspiring">Inspirierend</mat-checkbox>
+                            <mat-checkbox formControlName="intimidating">Einschuechternd</mat-checkbox>
+                            <mat-checkbox formControlName="intuitive">Intuitiv</mat-checkbox>
+                            <mat-checkbox formControlName="inviting">Einladend</mat-checkbox>
+                            <mat-checkbox formControlName="irrelevant">Irrelevant</mat-checkbox>
+                            <mat-checkbox formControlName="old">Alt</mat-checkbox>
+                            <mat-checkbox formControlName="ordinary">Gewoehnlich</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="organized">Strukturiert</mat-checkbox>
+                            <mat-checkbox formControlName="overwhelming">Ueberwaeltigend</mat-checkbox>
+                            <mat-checkbox formControlName="patronizing">Goennerhaft</mat-checkbox>
+                            <mat-checkbox formControlName="poorQuality">Schlechte Qualitaet</mat-checkbox>
+                            <mat-checkbox formControlName="powerful">Maechtig</mat-checkbox>
+                            <mat-checkbox formControlName="responsive">Reagierend</mat-checkbox>
+                            <mat-checkbox formControlName="rigid">Starr</mat-checkbox>
+                            <mat-checkbox formControlName="satisfying">Befriedigend</mat-checkbox>
+                            <mat-checkbox formControlName="slow">Langsam</mat-checkbox>
+                            <mat-checkbox formControlName="timeConsuming">Zeitaufwendig</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <div class="form-container-check">
+                            <mat-checkbox formControlName="timeSaving">Zeitsparrend</mat-checkbox>
+                            <mat-checkbox formControlName="tooTechnical">Zu technisch</mat-checkbox>
+                            <mat-checkbox formControlName="unapproachable">Unnahbar</mat-checkbox>
+                            <mat-checkbox formControlName="unattractive">Unattraktiv</mat-checkbox>
+                            <mat-checkbox formControlName="uncontrollable">Unkontrollierbar</mat-checkbox>
+                            <mat-checkbox formControlName="understandable">Verstaendlich</mat-checkbox>
+                            <mat-checkbox formControlName="undesirable">Unerwuenscht</mat-checkbox>
+                            <mat-checkbox formControlName="unpredictable">Unberechenbar</mat-checkbox>
+                            <mat-checkbox formControlName="usable">Verwendbar</mat-checkbox>
+                            <mat-checkbox formControlName="useful">Nuetzlich</mat-checkbox>
+                            <mat-checkbox formControlName="valuable">Wertvoll</mat-checkbox>
+                        </div>
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- How well the consent request meets your needs for privacy policy representation? -->
+    <mat-step [stepControl]="concentMeetsNeeds">
+        <form [formGroup]="concentMeetsNeeds">
+            <ng-template matStepLabel>Wie gut erfuellt diese Einverstaendniserklaerung Ihre Anforderungen an die Darstellung der Datenschutzerklaerung?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Sehr gut</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Gut</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Mittelmaessig</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Mangelhaft</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Ungenuegend</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="concentMeetsNeeds.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- Information on which tab or tabs did you find useful and informative?  -->
+    <!-- <mat-step [stepControl]="usefulTab">
+        <form [formGroup]="usefulTab">
+            <ng-template matStepLabel>Information on which tab or tabs did you find useful and informative?</ng-template>
+            <div class="form-container">
+                <mat-checkbox formControlName="purpose">Purpose</mat-checkbox>
+                <mat-checkbox formControlName="data">Data</mat-checkbox>
+                <mat-checkbox formControlName="storage">Storage</mat-checkbox>
+                <mat-checkbox formControlName="sharing">Sharing</mat-checkbox>
+                <mat-checkbox formControlName="processing">Processing</mat-checkbox>
+                <mat-checkbox formControlName="none">None</mat-checkbox>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step> -->
+
+    <!-- Which tab or tabs should be removed because they are useless and overcomplicate everything?  -->
+    <!-- <mat-step [stepControl]="notUsefulTab">
+        <form [formGroup]="notUsefulTab">
+            <ng-template matStepLabel>Which tab or tabs should be removed because they are useless and overcomplicate everything?</ng-template>
+            <div class="form-container">
+                <mat-checkbox formControlName="purpose">Purpose</mat-checkbox>
+                <mat-checkbox formControlName="data">Data</mat-checkbox>
+                <mat-checkbox formControlName="storage">Storage</mat-checkbox>
+                <mat-checkbox formControlName="sharing">Sharing</mat-checkbox>
+                <mat-checkbox formControlName="processing">Processing</mat-checkbox>
+                <mat-checkbox formControlName="none">None</mat-checkbox>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step> -->
+
+
+     <!-- How understandable did you find the tree graph? -->
+    <mat-step [stepControl]="understandableTreeGraph">
+        <form [formGroup]="understandableTreeGraph">
+            <ng-template matStepLabel>Wie verstaendlich fanden Sie das Diagramm fuer jede Funktion?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Gar nicht verstaendlich </mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Etwas verstaendlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Verstaendlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sehr verstaendlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Aeusserst verstaendlich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="understandableTreeGraph.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+    <!-- How useful did you find the tree graph?  -->
+    <mat-step [stepControl]="usefulTreeGraph">
+        <form [formGroup]="usefulTreeGraph">
+            <ng-template matStepLabel>Wie nuetzlich fanden Sie das Diagramm in der Zusammenfassung?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Gar nicht nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Etwas nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sehr nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Aeusserst nuetzlich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="usefulTreeGraph.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- How useful did you find the icons in the graph?  -->
+    <mat-step [stepControl]="usefulIconsTreeGraph">
+        <form [formGroup]="usefulIconsTreeGraph">
+            <ng-template matStepLabel>Wie nuetzlich fanden Sie die Piktogramme im Diagramm?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Gar nicht nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Etwas nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sehr nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Aeusserst nuetzlich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="usefulIconsTreeGraph.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- How useful did you find the color-coding of the data types?  -->
+    <mat-step [stepControl]="usefulColorCoding">
+        <form [formGroup]="usefulColorCoding">
+            <ng-template matStepLabel>Wie nuetzlich fanden Sie die Farbkodierung der Datentypen?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Gar nicht nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Etwas nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sehr nuetzlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Aeusserst nuetzlich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="usefulColorCoding.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+    <!-- What would you suggest to improve in the tree graph? -->
+    <mat-step [stepControl]="improveTreeGraph">
+        <form [formGroup]="improveTreeGraph">
+            <ng-template matStepLabel>Was wuerden Sie vorschlagen, um das Diagramm in der Zusammenfassung zu verbessern? 
+                    <mat-icon
+                    matTooltip="Denken Sie ueber die Dinge nach, die wir in der Vorlesung gelernt haben."
+                    matTooltipPosition="above">info
+                </mat-icon>
+            </ng-template>
+            <div class="form-container">
+                    <mat-form-field>
+                            <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                        </mat-form-field>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What would you suggest to improve in the tree graph? -->
+    <mat-step [stepControl]="improveFuncTreeGraph">
+        <form [formGroup]="improveFuncTreeGraph">
+            <ng-template matStepLabel>Was wuerden Sie vorschlagen, um die Funktion-Diagramme zu verbessern?
+                    <mat-icon
+                    matTooltip="Denken Sie ueber die Dinge nach, die wir in der Vorlesung gelernt haben."
+                    matTooltipPosition="above">info
+                </mat-icon>
+            </ng-template>
+            <div class="form-container">
+                    <mat-form-field>
+                            <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                        </mat-form-field>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- What did you like most about the consent request in comparison to a traditional privacy policy? -->
+    <mat-step [stepControl]="mostAppealing">
+        <form [formGroup]="mostAppealing">
+            <ng-template matStepLabel>Was hat Ihnen an der Einverstaendniserklaerung, im Vergleich zu einer ueblichen Datenschutzerklaerung am besten gefallen?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="mostAppealing.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What’s the easiest part about using the consent request? -->
+    <mat-step [stepControl]="easiestPart">
+        <form [formGroup]="easiestPart">
+            <ng-template matStepLabel>Was ist das Einfachste bei der Verwendung der Einverstaendniserklaerung?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="easiestPart.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+    <!-- What’s the hardest part about using the consent request? -->
+    <mat-step [stepControl]="hardestPart">
+        <form [formGroup]="hardestPart">
+            <ng-template matStepLabel>Was ist das Schwierigste bei der Verwendung der Einverstaendniserklaerung?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="hardestPart.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- Was there anything surprising or unexpected about the consent request? -->
+    <mat-step [stepControl]="surprisingUnexpected">
+        <form [formGroup]="surprisingUnexpected">
+            <ng-template matStepLabel>Gab es etwas Ueberraschendes oder Unerwartetes in der Einverstaendniserklaerung?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="surprisingUnexpected.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What could be done to improve the user interface of the consent request? -->
+    <mat-step [stepControl]="toImproveConsent">
+        <form [formGroup]="toImproveConsent">
+            <ng-template matStepLabel>Wie kann man die Anwenderschnittstelle der Einverstaendniserklaerung verbessern?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="toImproveConsent.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- How easy is the consent request to use? -->
+    <mat-step [stepControl]="howEasyUse">
+        <form [formGroup]="howEasyUse">
+            <ng-template matStepLabel>Wie einfach ist es die Einverstaendniserklaerung zu verwenden?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="howEasyUse.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+
+
+    <!-- Do you feel that you control the processing of your data? -->
+    <mat-step [stepControl]="doyoFeelProc">
+        <form [formGroup]="doyoFeelProc">
+            <ng-template matStepLabel>Haben Sie das Gefuehl, dass Sie die Verarbeitung Ihrer Daten kontrollieren?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Stimme voll und ganz zu</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Stimme groesstenteils zu</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Stimme teilweise zu</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Stimme weniger zu</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Stimme gar nicht zu</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="doyoFeelProc.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+    <!-- Which feature (or features) of the consent request are most important to you? -->
+    <mat-step [stepControl]="featureImportantMost">
+        <form [formGroup]="featureImportantMost">
+            <ng-template matStepLabel>Welche Funktion(en) der Einverstaendniserklaerung sind Ihnen am wichtigsten?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="featureImportantMost.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- Which feature (or features) of the consent request are least important to you? -->
+    <mat-step [stepControl]="featureImportantLeast">
+        <form [formGroup]="featureImportantLeast">
+            <ng-template matStepLabel>Welche Funktion(en) der Einverstaendniserklaerung sind Ihnen am wenigsten wichtig?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="featureImportantLeast.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary" (click)="onNext()">Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What might keep people from using the consent request? -->
+    <mat-step [stepControl]="keepUsing">
+        <form [formGroup]="keepUsing">
+            <ng-template matStepLabel>Was koennte Menschen davon abhalten die Einverstaendniserklaerung zu verwenden?</ng-template>
+            <div class="form-container">
+                <mat-form-field>
+                    <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                </mat-form-field>
+                <mat-error *ngIf="keepUsing.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                    <button mat-raised-button matStepperNext color="accent" (click)="onComplete()">Fertig</button>
+            </div>
+        </form>
+    </mat-step>
+
+</mat-vertical-stepper>

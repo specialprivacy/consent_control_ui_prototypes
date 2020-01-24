@@ -1,0 +1,42 @@
+<div style="height: 100%; padding: 20px" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card [ngStyle]="{width: cardWidth}">
+    <mat-card-header>
+        <mat-icon style="color: gray; cursor: pointer;" (click)=onMainHelpClick() >help</mat-icon>
+      <mat-card-title i18n="@@app_title">Consent Request - BeFit</mat-card-title>
+      <!-- <mat-card-subtitle i18n="@@app_subtitle">Please provide your preferences for data processing.</mat-card-subtitle> -->
+    </mat-card-header>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" >
+        <ng5-slider *ngIf="!message3" style="height:300px" [(value)]="value" [options]="options" (userChange)="onSliderValueChange($event)"></ng5-slider>
+
+        <div fxLayout="row" fxLayoutAlign="end stretch" >
+            <div  style="background-color: #eaeaea; width: 1px;"></div>
+            <div fxLayout="column" style="padding-left: 20px;" [fxLayoutAlign]="value == 0 ? 'center center' : 'none'">
+              <span *ngIf="message1" [ngStyle]="{visibility: value == 0 ? 'visible' : 'hidden'}" style="position: absolute; text-align: center;"><h4 i18n="@@no_functionality1">DEVICE FUNCTIONALITIES ARE NOT AVAILABLE WITHOUT DATA PROCESSING.</h4><h3 i18n="@@no_functionality_message1">Slide the red pointer to provide your preferences for data processing.</h3></span>
+              <span *ngIf="message2" [ngStyle]="{visibility: value == 0 ? 'visible' : 'hidden'}" style="position: absolute; text-align: center;"><h3 i18n="@@no_functionality2">Please slide the red pointer to provide your preferences for data processing in order to activate device functionalities.</h3></span>
+              <span *ngIf="message3" [ngStyle]="{visibility: value == 0 ? 'visible' : 'hidden'}" style="position: absolute; text-align: center; color: red"><h1 i18n="@@wrong_address">Wrong Web Address!</h1></span>
+
+              <div [ngStyle]="{visibility: value == 0 ? 'hidden' : 'visible'}" *ngFor="let item of functionalities; let i = index"  class="example-item">
+                  <div fxLayout="row" fxLayoutAlign="start center" [ngStyle]="{ visibility: !isAvailable(item.id, value) ? 'visible' : 'hidden' }">
+                    <mat-checkbox [ngModel]="!isAvailable(item.id, value)" [disabled]="isAvailable(item.id, value)" class="example-margin" (change)="onCheckBoxChange(item.id, $event)"></mat-checkbox>
+                    <div [ngStyle]="{ color: !isAvailable(item.id, value) ? '#000000' : '#cccccc' }" style="padding-left: 10px"><span>{{item.name}}</span>
+                      <mat-icon (click)=onHelpClick(item) style="cursor: pointer; font-size: 14px; padding-left:5px; height: 17px;" >info</mat-icon>
+                    </div>
+                  </div>
+                  <div style="padding-left: 28px;
+                    margin-top: -2px;
+                    font-size: 12px;
+                    color: gray;
+                    font-style: italic;" [ngStyle]="{ color: isAvailable(item.id, value) ? '#FFFFFF' : 'gray' }">{{datashared[i]}}
+                  </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <mat-card-actions [align]="'end'">
+      <button *ngIf="!message3" mat-stroked-button style="margin-left: 10px" (click)="onComplete()" i18n="@@app_submit_button">SUBMIT PREFERENCES</button>
+    </mat-card-actions>
+
+  </mat-card>
+</div>

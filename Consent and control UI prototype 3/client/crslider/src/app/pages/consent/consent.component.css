@@ -1,0 +1,21 @@
+.width-card {
+  width: 100%;
+}
+
+.height-card {
+  height: 100%;
+}
+
+.example-viewport {
+  /* height: calc(100% - 60px); */
+  height: 100%;
+  width: 100%;
+}
+
+.example-item {
+  height: 38px;
+}
+
+/deep/ .mat-card-header-text {
+  width: 100%
+}

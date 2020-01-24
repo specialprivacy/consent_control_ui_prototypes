@@ -1,0 +1,599 @@
+<div style="background: #fff; padding: 20px; height: calc(100% - 20px); ">
+<h2 style="color: red;" i18n="@@question_stop_video">STOP RECORDING THE VIDEO!</h2>
+<h2 i18n="@@question_title">Questionnaire</h2>
+
+<mat-vertical-stepper linear="true">
+  <mat-step [stepControl]="yesno1">
+    <form [formGroup]="yesno1">
+        <ng-template matStepLabel><span i18n="@@question_yesno_1">Have you agreed to the processing of your “resting heart rate” to use the functionality “Display resting heart rate”?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1" i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2"  i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno1.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno2">
+    <form [formGroup]="yesno2">
+        <ng-template matStepLabel><span i18n="@@question_yesno2">Have you agreed to the processing of your “resting heart rate” and “activity heart rate” to use the functionality “Display all day heart rate”?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno2.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno3">
+    <form [formGroup]="yesno3">
+        <ng-template matStepLabel><span i18n="@@question_yesno3">Have you agreed to the processing of your data that is required to provide you with the information about how many calories you’ve burned?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno3.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno4">
+    <form [formGroup]="yesno4">
+        <ng-template matStepLabel><span i18n="@@question_yesno4">Have you agreed to the processing of your data that is required to provide you with your cardio fitness score?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno4.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno5">
+    <form [formGroup]="yesno5">
+        <ng-template matStepLabel><span i18n="@@question_yesno5">Have you agreed to the processing of your “GPS coordinates” to be able to see your route on a map?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno5.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno6">
+    <form [formGroup]="yesno6">
+        <ng-template matStepLabel><span i18n="@@question_yesno6">Have you agreed to the processing of your data that is required to see your pointwise velocity on a map?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno6.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno7">
+    <form [formGroup]="yesno7">
+        <ng-template matStepLabel><span i18n="@@question_yesno7">Have you agreed to the processing of your data that is required to have race time predictions derived for you?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno7.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno8">
+    <form [formGroup]="yesno8">
+        <ng-template matStepLabel><span i18n="@@question_yesno8">Have you enabled the recovery adviser?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno8.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno9">
+    <form [formGroup]="yesno9">
+        <ng-template matStepLabel><span i18n="@@question_yesno9">Have you agreed to the processing of your data to back them up?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno9.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno10">
+    <form [formGroup]="yesno10">
+        <ng-template matStepLabel><span i18n="@@question_yesno10">Have you agreed to the processing of your data to improve service provider's products and services?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno10.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="yesno11">
+    <form [formGroup]="yesno11">
+        <ng-template matStepLabel><span i18n="@@question_yesno11">Have you agreed to receive targeted fitness advertisement?</span><br><span class="subquestion"  i18n="@@question_yesno_think">Think about the consent you’ve just given</span></ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1"  i18n="@@question_yes">Yes</mat-radio-button><mat-radio-button class="radio-button" value="2" i18n="@@question_no">No</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="yesno11.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+
+  <!-- Overall, how satisfied or dissatisfied are you with the consent request? -->
+  <mat-step [stepControl]="satisfiedConsentRequest">
+      <form [formGroup]="satisfiedConsentRequest">
+          <ng-template matStepLabel i18n="@@question_satisfiedConsentRequest">Overall, how satisfied or dissatisfied are you with the consent request?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                <mat-radio-button class="radio-button" value="5" i18n="@@question_satisfiedConsentRequest_5">Very dissatisfied</mat-radio-button>
+                <mat-radio-button class="radio-button" value="4" i18n="@@question_satisfiedConsentRequest_4">Somewhat dissatisfied</mat-radio-button>
+                <mat-radio-button class="radio-button" value="3" i18n="@@question_satisfiedConsentRequest_3">Neither satisfied nor dissatisfied</mat-radio-button>
+                <mat-radio-button class="radio-button" value="2" i18n="@@question_satisfiedConsentRequest_2">Somewhat satisfied</mat-radio-button>
+                <mat-radio-button class="radio-button" value="1" i18n="@@question_satisfiedConsentRequest_1">Very satisfied</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="satisfiedConsentRequest.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- How likely is it that you would recommend the consent request to a friend? -->
+  <mat-step [stepControl]="recommendConsentRequest">
+      <form [formGroup]="recommendConsentRequest">
+          <ng-template matStepLabel i18n="@@question_recommendConsentRequest">How likely is it that you would recommend the website with such a consent request to a friend?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@question_recommendConsentRequest_1">Not at all likely</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@question_recommendConsentRequest_2">Slightly likely</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@question_recommendConsentRequest_3">Moderately likely</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@question_recommendConsentRequest_4">Very likely</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@question_recommendConsentRequest_5">Extremely likely</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="recommendConsentRequest.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- What was you impression of the time it took you to complete the tasks?  -->
+  <mat-step [stepControl]="impressionTimeToComplete">
+      <form [formGroup]="impressionTimeToComplete">
+          <ng-template matStepLabel i18n="@@question_impressionTimeToComplete">What was your impression of the time it took you to complete the tasks?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@question_impressionTimeToComplete_1">Too long</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@question_impressionTimeToComplete_2">Too long but it was worth while</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@question_impressionTimeToComplete_3">About the right amount of time </mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@question_impressionTimeToComplete_4">It took less time than I thought it would</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="impressionTimeToComplete.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- Which of the following words would you use to describe the consent request?  -->
+  <mat-step [stepControl]="wordsDescribe">
+      <form [formGroup]="wordsDescribe">
+          <ng-template matStepLabel i18n="@@question_wordsDescribe">Which of the following words would you use to describe the consent request?</ng-template>
+          <div>
+              <mat-grid-list cols="6" rowHeight="260px" class="grid-test-1">
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="annoying" i18n="@@question_wordsDescribe_1">Annoying</mat-checkbox>
+                          <mat-checkbox formControlName="appealing" i18n="@@question_wordsDescribe_2">Appealing</mat-checkbox>
+                          <mat-checkbox formControlName="boring" i18n="@@question_wordsDescribe_3">Boring</mat-checkbox>
+                          <mat-checkbox formControlName="clear" i18n="@@question_wordsDescribe_4">Clear</mat-checkbox>
+                          <mat-checkbox formControlName="compelling" i18n="@@question_wordsDescribe_5">Compelling</mat-checkbox>
+                          <mat-checkbox formControlName="complex" i18n="@@question_wordsDescribe_6">Complex</mat-checkbox>
+                          <mat-checkbox formControlName="confusing" i18n="@@question_wordsDescribe_7">Confusing</mat-checkbox>
+                          <mat-checkbox formControlName="cuttingEdge" i18n="@@question_wordsDescribe_8">Cutting edge</mat-checkbox>
+                          <mat-checkbox formControlName="dated" i18n="@@question_wordsDescribe_9">Dated</mat-checkbox>
+                          <mat-checkbox formControlName="difficult" i18n="@@question_wordsDescribe_10">Difficult</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="disruptive" i18n="@@question_wordsDescribe_11">Disruptive</mat-checkbox>
+                          <mat-checkbox formControlName="distracting"  i18n="@@question_wordsDescribe_12">Distracting</mat-checkbox>
+                          <mat-checkbox formControlName="dull"  i18n="@@question_wordsDescribe_13">Dull</mat-checkbox>
+                          <mat-checkbox formControlName="easyToUse"  i18n="@@question_wordsDescribe_132">Easy to use</mat-checkbox>
+                          <mat-checkbox formControlName="effective"  i18n="@@question_wordsDescribe_14">Effective</mat-checkbox>
+                          <mat-checkbox formControlName="efficient"  i18n="@@question_wordsDescribe_15">Efficient</mat-checkbox>
+                          <mat-checkbox formControlName="effortless"  i18n="@@question_wordsDescribe_16">Effortless</mat-checkbox>
+                          <mat-checkbox formControlName="empowering"  i18n="@@question_wordsDescribe_17">Empowering</mat-checkbox>
+                          <mat-checkbox formControlName="engaging"  i18n="@@question_wordsDescribe_18">Engaging</mat-checkbox>
+                          <mat-checkbox formControlName="exceptional"  i18n="@@question_wordsDescribe_19">Exceptional</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="familiar"  i18n="@@question_wordsDescribe_20">Familiar</mat-checkbox>
+                          <mat-checkbox formControlName="fast" i18n="@@question_wordsDescribe_21">Fast</mat-checkbox>
+                          <mat-checkbox formControlName="flexible" i18n="@@question_wordsDescribe_22">Flexible</mat-checkbox>
+                          <mat-checkbox formControlName="fresh" i18n="@@question_wordsDescribe_23">Fresh</mat-checkbox>
+                          <mat-checkbox formControlName="friendly" i18n="@@question_wordsDescribe_24">Friendly</mat-checkbox>
+                          <mat-checkbox formControlName="frustrating" i18n="@@question_wordsDescribe_25">Frustrating</mat-checkbox>
+                          <mat-checkbox formControlName="getsInTheWay" i18n="@@question_wordsDescribe_26">Gets in the way</mat-checkbox>
+                          <mat-checkbox formControlName="hardToUse" i18n="@@question_wordsDescribe_27">Hard to Use</mat-checkbox>
+                          <mat-checkbox formControlName="Helpful" i18n="@@question_wordsDescribe_28">Helpful</mat-checkbox>
+                          <mat-checkbox formControlName="highQuality" i18n="@@question_wordsDescribe_29">High quality</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="impressive" i18n="@@question_wordsDescribe_30">Impressive</mat-checkbox>
+                          <mat-checkbox formControlName="ineffective" i18n="@@question_wordsDescribe_31">Ineffective</mat-checkbox>
+                          <mat-checkbox formControlName="innovative" i18n="@@question_wordsDescribe_32">Innovative</mat-checkbox>
+                          <mat-checkbox formControlName="inspiring" i18n="@@question_wordsDescribe_33">Inspiring</mat-checkbox>
+                          <mat-checkbox formControlName="intimidating" i18n="@@question_wordsDescribe_34">Intimidating</mat-checkbox>
+                          <mat-checkbox formControlName="intuitive" i18n="@@question_wordsDescribe_35">Intuitive</mat-checkbox>
+                          <mat-checkbox formControlName="inviting" i18n="@@question_wordsDescribe_36">Inviting</mat-checkbox>
+                          <mat-checkbox formControlName="irrelevant" i18n="@@question_wordsDescribe_37">Irrelevant</mat-checkbox>
+                          <mat-checkbox formControlName="old" i18n="@@question_wordsDescribe_38">Old</mat-checkbox>
+                          <mat-checkbox formControlName="ordinary" i18n="@@question_wordsDescribe_39">Ordinary</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="organized" i18n="@@question_wordsDescribe_40">Organized</mat-checkbox>
+                          <mat-checkbox formControlName="overwhelming" i18n="@@question_wordsDescribe_41">Overwhelming</mat-checkbox>
+                          <mat-checkbox formControlName="patronizing" i18n="@@question_wordsDescribe_42">Patronizing</mat-checkbox>
+                          <mat-checkbox formControlName="poorQuality" i18n="@@question_wordsDescribe_43">Poor quality</mat-checkbox>
+                          <mat-checkbox formControlName="powerful" i18n="@@question_wordsDescribe_44">Powerful</mat-checkbox>
+                          <mat-checkbox formControlName="responsive" i18n="@@question_wordsDescribe_45">Responsive</mat-checkbox>
+                          <mat-checkbox formControlName="rigid" i18n="@@question_wordsDescribe_46">Rigid</mat-checkbox>
+                          <mat-checkbox formControlName="satisfying" i18n="@@question_wordsDescribe_47">Satisfying</mat-checkbox>
+                          <mat-checkbox formControlName="slow" i18n="@@question_wordsDescribe_48">Slow</mat-checkbox>
+                          <mat-checkbox formControlName="timeConsuming" i18n="@@question_wordsDescribe_49">Time-consuming</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+                  <mat-grid-tile>
+                      <div class="form-container-check">
+                          <mat-checkbox formControlName="timeSaving" i18n="@@question_wordsDescribe_50">Time-Saving</mat-checkbox>
+                          <mat-checkbox formControlName="tooTechnical" i18n="@@question_wordsDescribe_51">Too Technical</mat-checkbox>
+                          <mat-checkbox formControlName="unapproachable" i18n="@@question_wordsDescribe_52">Unapproachable</mat-checkbox>
+                          <mat-checkbox formControlName="unattractive" i18n="@@question_wordsDescribe_53">Unattractive</mat-checkbox>
+                          <mat-checkbox formControlName="uncontrollable" i18n="@@question_wordsDescribe_54">Uncontrollable</mat-checkbox>
+                          <mat-checkbox formControlName="understandable" i18n="@@question_wordsDescribe_55">Understandable</mat-checkbox>
+                          <mat-checkbox formControlName="undesirable" i18n="@@question_wordsDescribe_56">Undesirable</mat-checkbox>
+                          <mat-checkbox formControlName="unpredictable" i18n="@@question_wordsDescribe_57">Unpredictable</mat-checkbox>
+                          <mat-checkbox formControlName="usable" i18n="@@question_wordsDescribe_58">Usable</mat-checkbox>
+                          <mat-checkbox formControlName="useful" i18n="@@question_wordsDescribe_59">Useful</mat-checkbox>
+                          <mat-checkbox formControlName="valuable" i18n="@@question_wordsDescribe_60">Valuable</mat-checkbox>
+                      </div>
+                  </mat-grid-tile>
+              </mat-grid-list>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <mat-step [stepControl]="howRememberGraph">
+    <form [formGroup]="howRememberGraph">
+        <ng-template matStepLabel i18n="@@question_howRememberGraph">How well do you remember the overview graph?</ng-template>
+        <div class="form-container">
+            <mat-radio-group class="radio-group-column" formControlName="value">
+              <mat-radio-button class="radio-button" value="1" i18n="@@question_howRememberGraph_1">Not at all </mat-radio-button>
+              <mat-radio-button class="radio-button" value="2" i18n="@@question_howRememberGraph_2">Slightly</mat-radio-button>
+              <mat-radio-button class="radio-button" value="3" i18n="@@question_howRememberGraph_3">Somewhat</mat-radio-button>
+              <mat-radio-button class="radio-button" value="4" i18n="@@question_howRememberGraph_4">Fairly Well</mat-radio-button>
+              <mat-radio-button class="radio-button" value="5" i18n="@@question_howRememberGraph_5">Very Well</mat-radio-button>
+            </mat-radio-group>
+            <mat-error *ngIf="howRememberGraph.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        </div>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="howUsefullGraph">
+      <form [formGroup]="howUsefullGraph">
+          <ng-template matStepLabel i18n="@@question_howUsefullGraph">How useful did you find the detailed overview graph?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@question_usefull_1">Not at all useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@question_usefull_2">Slightly useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@question_usefull_3">Moderately useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@question_usefull_4">Very useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@question_usefull_5">Extremely useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="6" i18n="@@question_usefull_6">Not Applicable</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="howUsefullGraph.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next">Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="howUsefullGraphIcon">
+      <form [formGroup]="howUsefullGraphIcon">
+          <ng-template matStepLabel i18n="@@question_howUsefullGraphIcon">How useful did you find the icons in the overview graph?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@question_usefull_1">Not at all useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@question_usefull_2">Slightly useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@question_usefull_3">Moderately useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@question_usefull_4">Very useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@question_usefull_5">Extremely useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="6" i18n="@@question_usefull_6">Not Applicable</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="howUsefullGraphIcon.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next">Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <mat-step [stepControl]="howUsefullColorcoding">
+      <form [formGroup]="howUsefullColorcoding">
+          <ng-template matStepLabel i18n="@@question_howUsefullColorcoding">How useful did you find the color-coding of the data types in the overview graph?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@question_usefull_1">Not at all useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@question_usefull_2">Slightly useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@question_usefull_3">Moderately useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@question_usefull_4">Very useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@question_usefull_5">Extremely useful</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="6" i18n="@@question_usefull_6">Not Applicable</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="howUsefullColorcoding.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next">Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- Do you feel that you control the processing of your data? -->
+  <mat-step [stepControl]="doyoFeelProc">
+    <form [formGroup]="doyoFeelProc">
+        <ng-template matStepLabel i18n="@@question_doyoFeelProc">Do you feel that, with the consent like this, you control the processing of your data?</ng-template>
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+          <mat-radio-group formControlName="value">
+            <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+            <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+            <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+            <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+            <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+          </mat-radio-group>
+          <div><span i18n="@@doyoFeelProc">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+        </div>
+        <mat-error *ngIf="doyoFeelProc.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+        <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+    </form>
+  </mat-step>
+
+
+  <mat-step [stepControl]="sliderQuestion1">
+      <form [formGroup]="sliderQuestion1">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion1">I think I would like to use websites with this consent request frequently.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion1.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion2">
+      <form [formGroup]="sliderQuestion2">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion2">I found the consent request unnecessarily complex.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion2.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion3">
+      <form [formGroup]="sliderQuestion3">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion3">I thought the consent request was easy to use.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion3.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion4">
+      <form [formGroup]="sliderQuestion4">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion4">I think I would need Tech Support to be able to use this consent request.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion4.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion5">
+      <form [formGroup]="sliderQuestion5">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion5">I found various functions of this consent request were well integrated.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion5.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion6">
+      <form [formGroup]="sliderQuestion6">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion6">I thought there was too much inconsistency in this consent request.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion6.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion7">
+      <form [formGroup]="sliderQuestion7">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion7">I would imagine that most people would learn to use this consent request very quickly.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion7.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion8">
+      <form [formGroup]="sliderQuestion8">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion8">I found the consent request very cumbersome to use.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion8.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion9">
+      <form [formGroup]="sliderQuestion9">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion9">I felt very confident using the consent request.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion9.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onNext()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="sliderQuestion10">
+      <form [formGroup]="sliderQuestion10">
+          <ng-template matStepLabel><span i18n="@@question_sliderQuestion10">I need to learn a lot about this consent request before I could effectively use it.</span><br>
+            <span class="subquestion"  i18n="@@question_slider_think">Read the following statement about the consent request and mark your immediate response. If you feel that you cannot respond, mark the center point of the scale.</span></ng-template>
+          <div fxLayout="row" fxLayoutAlign="start center">
+            <div class="slider-paddings"><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_disagree">Disagree</span></div>
+            <mat-radio-group formControlName="value">
+              <mat-radio-button class="radio-button" value="1"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="2"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="3"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="4"></mat-radio-button>
+              <mat-radio-button class="radio-button" value="5"></mat-radio-button>
+            </mat-radio-group>
+            <div><span i18n="@@question_strongly">Strongly</span><br/><span i18n="@@question_agree">Agree</span></div>
+          </div>
+          <mat-error *ngIf="sliderQuestion10.get('value').invalid" class="error-message"  i18n="@@question_required">Required.</mat-error>
+          <div class="control-button"><button mat-raised-button matStepperNext color="primary" (click)="onComplete()" i18n="@@question_next" >Next</button></div>
+      </form>
+    </mat-step>
+
+</mat-vertical-stepper>
+</div>

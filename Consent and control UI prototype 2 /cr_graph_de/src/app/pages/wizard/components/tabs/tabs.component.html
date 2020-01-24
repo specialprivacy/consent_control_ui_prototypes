@@ -1,0 +1,7 @@
+<mat-tab-group (focusChange)="onGroupClick($event.index)" [selectedIndex]="selectedIndex">
+    <mat-tab *ngFor="let group of groups;" label="{{group.name}}">
+        <ng-template mat-tab-label>
+            {{group.name}}<i class="tab-icon {{group.icon}}"></i>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

@@ -1,0 +1,45 @@
+<h2>Anwendugsfall</h2>
+
+<div>
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab label="Einfuehrung">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/tracker.jpg'" style="width: 250px">
+                <p align="justify">Stellen Sie sich vor, Sie haben ein <b>tragbares Geraet</b> von BeFit, Inc. fuer das <b>Fitness-Tracking</b> gekauft. Bevor Sie das BeFit-Geraet verwenden, lesen Sie die BeFit-Anleitungen zur Aktivierung des Geraets.</p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Anleitung</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Anleitung">
+            <div style="padding: 10px;">
+                <p align="justify">Danke, dass Sie unser Geraet gewaehlt haben! BeFit Inc. ("<b>BeFit</b>", "<b>wir</b>", "<b>uns</b>", "<b>unser</b>") entwickelt Produkte und Geraete fuer taegliche Gesundheits- und Fitness-Tracking, um die Benutzer zu unterstuetzen und zu inspirieren, ein gesünderes und aktiveres Leben zu fuehren.</p>
+                <p align="justify">Um das BeFit-Geraet ("<b>Geraet</b>") zu nutzen, muessen Sie es aktivieren, indem Sie unsere Website https://best.com/de/activate besuchen und die Verarbeitung Ihrer Daten durch BeFit zustimmen.<br/> 
+                    Wenn Sie Ihr Geraut aktivieren, wird Ihnen eine <b>Einverstaendniserklaerung</b> zur Datenverarbeitung gezeigt. Diese Einverstaendniserklaerung stellt Ihnen folgende Informationen zur Verfügung:</p>
+                    <ul>
+                        <li>was ist der <b>Zweck</b> der Datenverarbeitung (z.B.: die Funktionen unseres Geraets);</li>
+                        <li>welche <b>Daten</b> über Sie verarbeitet BeFit, um Ihnen die entsprechenden Funktionen anzubieten;</li>
+                        <li><b>wo</b> werden Ihre Daten <b>gespeichert</b>;</li>
+                        <li><b>wie</b> werden Ihre Daten <b>verarbeitet</b>;</li>
+                        <li><b>an wem</b> werden Ihre Daten <b>weitergegeben</b>.</li>
+                    </ul>
+                <p align="justify">Unsere Einverstaendniserklaerung gibt Ihnen die Moeglichkeit Informationen nach den oben genannten Kategorien einzusehen. Sie koennen die Funktionen, die Sie auf dem Geraet haben moechten, auswaehlen; einsehen welche Informationen verarbeitet werden muessen, um Ihnen diese Funktionen bereitzustellen; und entscheiden, ob Sie der Informationsverarbeitung zustimmen möchten, um diese Funktionen verwenden zu können. In einigen Faellen koennen Sie Ihre Einverstaendniserklaerung auch anpassen, indem Sie die Verarbeitung von nur bestimmten Datenkategorien fuer ausgewaehlte Zwecke erlauben.<br/> 
+                    <i>Zum Beispiel: Wenn Sie moechten, dass Ihnen Ihre Ruheherzfrequenz in unserer App <b>angezeigt</b> wird (Zweck / Funktion), sollten Sie uns erlauben, Ihre <b>Ruheherzfrequenz</b> (Daten) durch die <b>Berechnungen auf Ihrem Geraet</b> (Verarbeitung) und durch <b>Speichern</b> auf Ihrem Geraet (Speichern) zu verarbeiten. Ihre Daten werden, in diesem Fall, an niemandem <b>weitergegeben</b>.</i>
+                    </p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(0)">Zurueck</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)">Weiter</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Aktivierung">
+            <div style="text-align: center; padding: 10px;">
+                <p>Klicken Sie auf "Aktivieren", um zu sehen, wie die Aktivierung funktioniert. Ihnen wird zuerst eine kurze Bedienungsanleitung und dann die Einverstaendniserklaerung gezeigt.</p>
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Zurueck</button>
+                <button mat-raised-button color="accent" (click)="onStart()">Aktivieren</button>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

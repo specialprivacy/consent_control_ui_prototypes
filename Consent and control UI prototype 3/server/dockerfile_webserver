@@ -1,0 +1,6 @@
+FROM openjdk:8-jdk-alpine
+
+VOLUME /tmp
+
+COPY "$PWD"/server/crslider/build/libs/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

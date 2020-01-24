@@ -1,0 +1,31 @@
+<cr-tabs></cr-tabs>
+
+<div class="row" style="margin-top: 5px;">
+    <div class="col-md-11">
+        <cr-breadcrumb></cr-breadcrumb>
+    </div>
+    <div style="margin-top: 5px; padding-left: 20px;">
+        <button mat-mini-fab color="primary" (click)="onHelpClick()">Help</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <cr-description></cr-description>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <cr-request></cr-request>
+    </div>
+    <div class="col-md-6">
+        <cr-graph width="527" height="520" (expandClick)="onExpandClick()"></cr-graph>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 15px;">
+    <div class="col-md-12">
+        <button mat-raised-button color="accent" class="pull-right" (click)="onFinish()">Complete Consent Request</button>
+    </div>
+</div>

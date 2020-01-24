@@ -1,0 +1,182 @@
+<div style="background: #fff; padding: 20px; height: calc(100% - 20px);">
+<h2 style="color: red;" i18n="@@demdata_stop_video">STOP RECORDING THE VIDEO!</h2>
+<h2 i18n="@@demdata_title">Demographic Data</h2>
+<h3 i18n="@@demdata_message">This data will be kept completely anonymously and used only for the research purposes. The data will be deleted when the project (https://www.specialprivacy.eu/) ends. </h3>
+
+
+<mat-vertical-stepper linear="true">
+
+  <!-- What is your gender? -->
+  <mat-step [stepControl]="genderFormGroup">
+      <form [formGroup]="genderFormGroup">
+          <ng-template matStepLabel  i18n="@@demdata_genderFormGroup">What is your gender?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_genderFormGroup_1">Male</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_genderFormGroup_2">Female</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="genderFormGroup.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next">Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- What is your age? -->
+  <mat-step [stepControl]="ageFormGroup">
+      <form [formGroup]="ageFormGroup">
+          <ng-template matStepLabel i18n="@@demdata_ageFormGroup">What is your age?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_ageFormGroup_1">less than 16 years old</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_ageFormGroup_2">16-25 years old</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_ageFormGroup_3">26-35 years old</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_ageFormGroup_4">36-45 years old</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@demdata_ageFormGroup_5">46-55 years old</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="6" i18n="@@demdata_ageFormGroup_6">55 years and over</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="ageFormGroup.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!--What country do you come from?-->
+  <mat-step [stepControl]="countryFromFormGroup">
+          <form [formGroup]="countryFromFormGroup">
+              <ng-template matStepLabel i18n="@@demdata_countryFromFormGroup">What is your nationality?</ng-template>
+              <div class="form-container">
+                  <mat-form-field>
+                      <textarea matInput placeholder="Leave a comment" i18n-placeholder="@@demdata_countryFromFormGroup" formControlName="value" required></textarea>
+                  </mat-form-field>
+                  <mat-error *ngIf="countryFromFormGroup.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+              </div>
+              <div class="control-button">
+                      <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+              </div>
+          </form>
+      </mat-step>
+
+  <!-- What is the highest level of education you have completed?-->
+  <mat-step [stepControl]="educationFormGroup">
+      <form [formGroup]="educationFormGroup">
+          <ng-template matStepLabel i18n="@@demdata_educationFormGroup">What is the highest level of education you have completed? </ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_educationFormGroup_1">Some high school, no diploma</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_educationFormGroup_2">High school graduate, diploma or the equivalent</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_educationFormGroup_3">Trade/technical/vocational training</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_educationFormGroup_4">Some college, no degree</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@demdata_educationFormGroup_5">Bachelor’s degree</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="6" i18n="@@demdata_educationFormGroup_6">Mater’s degree</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="7" i18n="@@demdata_educationFormGroup_7">Doctorate degree</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="educationFormGroup.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- On average, how many hours per day do you spend on the Internet? -->
+  <mat-step [stepControl]="internetUsageAvg">
+      <form [formGroup]="internetUsageAvg">
+          <ng-template matStepLabel i18n="@@demdata_internetUsageAvg">On average, how many hours per day do you spend on the Internet? </ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_internetUsageAvg_1">Less than 1 hour a day</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_internetUsageAvg_2">1-3 hours</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_internetUsageAvg_3">3-6 hours</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_internetUsageAvg_4">6-8 hours</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@demdata_internetUsageAvg_5">More than 8 hours a day</mat-radio-button>
+
+              </mat-radio-group>
+              <mat-error *ngIf="internetUsageAvg.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- How would you assess your current skills for using the Internet? -->
+  <mat-step [stepControl]="internetSatisfactio">
+      <form [formGroup]="internetSatisfactio">
+          <ng-template matStepLabel i18n="@@demdata_internetSatisfactio">How would you assess your current skills for using the Internet?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1"><span i18n="@@demdata_internetSatisfactio_1">Novice</span>
+                      <mat-icon
+                          i18n-matTooltip="@@demdata_internetSatisfactio_1_tooltip"
+                          matTooltip="No idea what I am doing once I am on the Internet. No idea where to get help."
+                          matTooltipPosition="above">info
+                      </mat-icon>
+                  </mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_internetSatisfactio_2">Advanced beginner</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_internetSatisfactio_3">Competent</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_internetSatisfactio_4">Proficient</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" ><span i18n="@@demdata_internetSatisfactio_5">Expert</span>
+                      <mat-icon
+                          i18n-matTooltip="@@demdata_internetSatisfactio_5_tooltip"
+                          matTooltip="I consider myself an expert in all areas of the Internet use (e.g.:surfing,registering on a website, shopping, logging into my email, etc.). Other users come to me for assistance."
+                          matTooltipPosition="above">info
+                      </mat-icon>
+                  </mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="internetSatisfactio.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- How easy is it for you to use computers? -->
+  <mat-step [stepControl]="comfortableComputer">
+      <form [formGroup]="comfortableComputer">
+          <ng-template matStepLabel i18n="@@demdata_comfortableComputer">How easy is it for you to use computers?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group-column" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_comfortableComputer_1">Very difficult</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_comfortableComputer_2">Somewhat difficult</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_comfortableComputer_3">Neither difficult nor easy</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_comfortableComputer_4">Somewhat easy</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="5" i18n="@@demdata_comfortableComputer_5">Very easy</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="comfortableComputer.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+
+              <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" i18n="@@demdata_next" >Next</button>
+          </div>
+      </form>
+  </mat-step>
+
+  <!-- What is your preferred device to surf the Internet? -->
+  <mat-step [stepControl]="device">
+      <form [formGroup]="device">
+          <ng-template matStepLabel i18n="@@demdata_device">What is your preferred device to surf the Internet?</ng-template>
+          <div class="form-container">
+              <mat-radio-group class="radio-group" formControlName="value">
+                  <mat-radio-button class="radio-button" value="1" i18n="@@demdata_device_1">Desktop computer</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="2" i18n="@@demdata_device_2">Laptop</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="3" i18n="@@demdata_device_3">Tablet</mat-radio-button>
+                  <mat-radio-button class="radio-button" value="4" i18n="@@demdata_device_4">Smartphone</mat-radio-button>
+              </mat-radio-group>
+              <mat-error *ngIf="device.get('value').invalid" class="error-message" i18n="@@demdata_required">Required.</mat-error>
+          </div>
+          <div class="control-button">
+
+                  <button mat-raised-button color="accent" (click)="onComplete()" i18n="@@demdata_complete">Complete</button>
+          </div>
+      </form>
+  </mat-step>
+</mat-vertical-stepper>
+</div>

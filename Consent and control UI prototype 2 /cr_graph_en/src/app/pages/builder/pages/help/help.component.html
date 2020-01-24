@@ -1,0 +1,42 @@
+<h2>User Guide</h2>
+
+<div>
+    <mat-tab-group [(selectedIndex)]="selectedIndex">
+        <mat-tab label="Functionality selection">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help1.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <!-- <button mat-raised-button color="accent" (click)="onIntro()">Use Case</button> -->
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Next</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Giving consent">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help2.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(0)">Back</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)">Next</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Optional elements & revoking consent">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help3.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(1)">Back</button>
+                <button mat-raised-button color="primary" (click)="onGoToTab(3)">Next</button>
+            </div>
+        </mat-tab>
+        <mat-tab label="Summary & completing consent">
+            <div style="text-align: center; padding: 10px;">
+                <img [src]="'assets/img/help4.png'" width="1400">
+            </div>
+            <div style="padding: 5px; text-align: right;">
+                <button mat-raised-button color="primary" (click)="onGoToTab(2)">Back</button>
+                <!-- <button mat-raised-button color="accent" (click)="onStart()">Done</button> -->
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

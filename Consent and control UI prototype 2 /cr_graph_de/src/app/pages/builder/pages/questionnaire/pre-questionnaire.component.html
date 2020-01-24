@@ -1,0 +1,206 @@
+<h2>Demografische Daten</h2>
+
+<mat-vertical-stepper linear="true">
+
+    <!-- What is your gender? -->
+    <mat-step [stepControl]="genderFormGroup">
+        <form [formGroup]="genderFormGroup">
+            <ng-template matStepLabel>Geschlecht:</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">maennlich</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">weiblich</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="genderFormGroup.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What is your age? -->
+    <mat-step [stepControl]="ageFormGroup">
+        <form [formGroup]="ageFormGroup">
+            <ng-template matStepLabel>Alter:</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">weniger als 16 Jahre alt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">16-25 Jahre alt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">26-35 Jahre alt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">36-45 Jahre alt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">46-55 Jahre alt</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="6">55+ Jahre alt</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="ageFormGroup.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!--What country do you come from?-->
+    <mat-step [stepControl]="countryFromFormGroup">
+            <form [formGroup]="countryFromFormGroup">
+                <ng-template matStepLabel>Wo kommen Sie her?</ng-template>
+                <div class="form-container">
+                    <mat-form-field>
+                        <textarea matInput placeholder="Hinterlassen Sie einen Kommentar" formControlName="value" required></textarea>
+                    </mat-form-field>
+                    <mat-error *ngIf="countryFromFormGroup.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+                </div>
+                <div class="control-button">
+                        <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+                </div>
+            </form>
+        </mat-step>
+
+    <!-- What is the highest level of education you have completed?-->
+    <mat-step [stepControl]="educationFormGroup">
+        <form [formGroup]="educationFormGroup">
+            <ng-template matStepLabel>Hoechste abgeschlossene Schulausbildung:</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Keine</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Grundschule</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Sekundarschule (Allgemeinbildend)</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sekundarschule (Berufsbildend)</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Bachelor</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="6">Master</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="7">Doktorat</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="educationFormGroup.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What is (or was) your field of studies?-->
+    <mat-step [stepControl]="professionalBackground">
+        <form [formGroup]="professionalBackground">
+            <ng-template matStepLabel>Bildungsfeld:</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Naturwissenschaften</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Informationstechnologie</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Ingenieurwesen und verwandte Technologien</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Architektur und Baugewerbe</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Landwirtschaft</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="7">Medizin</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="6">Lehre</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="8">Wirtschaft und Verwaltung</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="9">Sozialwissenschaften</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="10">Geisteswissenschaften und Kuenste</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="11">Persoenliche Dienstleistungen</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="professionalBackground.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+    <!-- On average, how many hours per day do you spend on the Internet? -->
+    <mat-step [stepControl]="internetUsageAvg">
+        <form [formGroup]="internetUsageAvg">
+            <ng-template matStepLabel>Wie viele Stunden pro Tag (durchschnittlich) surfen Sie im Internet?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">weniger als 1 Stunde pro Tag</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">1-3 Stunden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">3-6 Stunden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">6-8 Stunden</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">mehr als 8 Stunden pro Tag</mat-radio-button>
+
+                </mat-radio-group>
+                <mat-error *ngIf="internetUsageAvg.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- How would you assess your current skills for using the Internet? -->
+    <mat-step [stepControl]="internetSatisfactio">
+        <form [formGroup]="internetSatisfactio">
+            <ng-template matStepLabel>Wie wuerden Sie Ihre derzeitige Internetkompetenz einschaetzen?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Anfaenger
+                        <mat-icon
+                            matTooltip="Keine Ahnung, was ich mache, sobald ich im Internet surfen anfange. Keine Ahnung, wo man Hilfe bekommen kann."
+                            matTooltipPosition="above">info
+                        </mat-icon>
+                    </mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Fortgeschrittener Anfaenger</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Kompetent</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Sachkundige</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Experte
+                        <mat-icon
+                            matTooltip="Ich halte mich für einen Experten in allen Bereichen der Internetnutzung (z.B.: Surfen, Registrieren auf einer Website, Einkaufen, Anmelden bei meiner E-Mail usw.). Andere Benutzer bitten mich um Hilfe."
+                            matTooltipPosition="above">info
+                        </mat-icon>
+                    </mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="internetSatisfactio.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- How easy is it for you to use computers? -->
+    <mat-step [stepControl]="comfortableComputer">
+        <form [formGroup]="comfortableComputer">
+            <ng-template matStepLabel>Wie einfach ist es fuer Sie Computer zu benutzen?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group-column" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Sehr schwer</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Eher schwer</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Weder schwer noch einfach</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Eher einfach</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="5">Sehr einfach</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="comfortableComputer.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                <button mat-raised-button matStepperNext color="primary"  (click)="onNext()" >Weiter</button>
+            </div>
+        </form>
+    </mat-step>
+
+    <!-- What is your preferred device to surf the Internet? -->
+    <mat-step [stepControl]="device">
+        <form [formGroup]="device">
+            <ng-template matStepLabel>Welches Geraet bevorzugen Sie, um im Internet zu surfen?</ng-template>
+            <div class="form-container">
+                <mat-radio-group class="radio-group" formControlName="value">
+                    <mat-radio-button class="radio-button" value="1">Desktop Computer</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="2">Laptop</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="3">Tablet</mat-radio-button>
+                    <mat-radio-button class="radio-button" value="4">Smartphone</mat-radio-button>
+                </mat-radio-group>
+                <mat-error *ngIf="device.get('value').invalid" class="error-message">Pflichtfeld.</mat-error>
+            </div>
+            <div class="control-button">
+
+                    <button mat-raised-button color="accent" (click)="onComplete()">Fertig</button>
+            </div>
+        </form>
+    </mat-step>
+
+
+
+</mat-vertical-stepper>

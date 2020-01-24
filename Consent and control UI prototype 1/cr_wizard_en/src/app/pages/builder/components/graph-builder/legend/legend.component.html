@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Legend</h1>
+<div mat-dialog-content>
+    <div fxLayout="row" fxLayoutGap="5px" style="height: 70px;">
+        <div *ngFor="let item of ['Purpose', 'Data', 'Storage', 'Processing', 'Sharing']"
+            class="border item"
+            [class.purpose]="item === 'Purpose'"
+            [class.data]="item === 'Data'"
+            [class.storage]="item === 'Storage'"
+            [class.processing]="item === 'Processing'"
+            [class.sharing]="item === 'Sharing'"
+            >
+            <div>{{item}}</div>
+        </div>
+    </div>
+</div>
+<div mat-dialog-actions align="center">
+    <button mat-raised-button [mat-dialog-close]="true">Close</button>
+</div>

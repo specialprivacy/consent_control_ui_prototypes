@@ -1,0 +1,105 @@
+image: docker:latest
+
+variables:
+  REGISTRY_STORAGE: registry.gitlab.com
+  CLI_ANGULAR: trion/ng-cli:latest
+  CLIENT_APP: $REGISTRY_STORAGE/user/cr-slider/client
+  SERVER_APP: $REGISTRY_STORAGE/user/cr-slider/server
+  DATABASE_APP: $REGISTRY_STORAGE/user/cr-slider/database
+
+services:
+  - docker:dind
+
+stages:
+  - lint_app
+  - build_app
+  - dockerize
+  - test_app
+  - deploy_staging
+  - deploy_production
+
+# lint:client:
+#   stage: lint_app
+#   script: echo "lint_client_job! "
+
+# lint:server:
+#   stage: lint_app
+#   script: echo "lint_server_job! "
+
+build:client:
+  stage: build_app
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE
+    - docker run --rm -v "$PWD"/client/crslider/:/app $CLI_ANGULAR npm install
+    - docker run --rm -v "$PWD"/client/crslider/:/app $CLI_ANGULAR ng build --prod --outputPath dist/en --baseHref /en/
+    - docker run --rm -v "$PWD"/client/crslider/:/app $CLI_ANGULAR ng build --prod --outputPath dist/de --baseHref /de/ --i18n-file src/locale/messages.de.xlf --i18n-format xlf --i18n-locale de
+  artifacts:
+    paths:
+      - client/crslider/dist/
+    expire_in: 1 day
+
+build:server:
+  image: gradle:alpine
+  stage: build_app
+  script:
+    - export SERVER_HOME=`pwd`/server/crslider/
+    - export GRADLE_USER_HOME="$SERVER_HOME"/.gradle
+    - cd "$SERVER_HOME"
+    - ./gradlew assemble
+  artifacts:
+    paths:
+      - server/crslider/build/libs/*.jar
+    expire_in: 1 day
+
+dockerize:client:
+  image: docker:latest
+  stage: dockerize
+  dependencies:
+    - build:client
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE
+    - docker build -t $CLIENT_APP -f "$PWD"/client/dockerfile_nginx .
+    - docker push $CLIENT_APP
+
+dockerize:server:
+  image: docker:latest
+  stage: dockerize
+  dependencies:
+    - build:server
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE
+    - docker build -t $SERVER_APP -f `pwd`/server/dockerfile_webserver .
+    - docker push $SERVER_APP
+
+dockerize:databse:
+  image: docker:latest
+  stage: dockerize
+  script:
+    - docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE
+    - docker build -t $DATABASE_APP -f `pwd`/database/dockerfile_database .
+    - docker push $DATABASE_APP
+
+deploy-staging:
+  environment:
+    name: staging
+    url: http://cr-slider.soft.cafe/
+  before_script:
+    - apk add --no-cache openssh
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+  stage: deploy_staging
+  script:
+    - ssh -oStrictHostKeyChecking=no root@$STAGING_HOST "docker rm -f client || true ; docker rm -f server || true ; docker rm -f database || true ; docker network create -d bridge cr-slider-bridge || true"
+    - ssh -oStrictHostKeyChecking=no root@$STAGING_HOST "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE ; docker pull $DATABASE_APP ; docker run -d -p 5432:5432 --name database --net=cr-slider-bridge -e POSTGRES_PASSWORD=docker -v $MOUNT_POINT/postgres:/var/lib/postgresql/data                                                  $DATABASE_APP"
+    - ssh -oStrictHostKeyChecking=no root@$STAGING_HOST "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE ; docker pull $SERVER_APP ;   docker run -d -p 8080:8080 --name server   --net=cr-slider-bridge -e DB_DATABASE=${DB_DATABASE} -e DB_HOSTNAME=${DB_HOSTNAME} -e DB_PASS=${DB_PASS} -e DB_PORT=${DB_PORT} -e DB_USER=${DB_USER}  $SERVER_APP"
+    - ssh -oStrictHostKeyChecking=no root@$STAGING_HOST "docker login -u $DOCKER_USER -p $DOCKER_PASSWORD $REGISTRY_STORAGE ; docker pull $CLIENT_APP ;   docker run -d -p   80:80   --name client   --net=cr-slider-bridge                                                                                                                                $CLIENT_APP"
+
+# deploy-prod:
+#   stage: deploy_production
+#   environment:
+#     name: prod
+#     url: https://prod.example.com
+#   when: manual
+#   script: echo "Deploy prod! "
